@@ -16,6 +16,7 @@ class ThumbsSkill(MycroftSkill):
 
     @intent_handler('thumbs.intent')
     def handle_not_are_you_intent(self, message):
+        self.speak_dialog("hello knight")
         serA = serial.Serial('/dev/ttyACM0', 9600, timeout=1)
         serA.flush()
         serA.write(b"thumb")
@@ -28,8 +29,6 @@ class ThumbsSkill(MycroftSkill):
         serD = serial.Serial('/dev/ttyACM3', 9600, timeout=1)
         serD.flush()
         serD.write(b"thumb") 
-        time.sleep(1.5)
-        self.speak_dialog("hello knight")
       
 
     def stop(self):
