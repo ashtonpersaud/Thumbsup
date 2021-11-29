@@ -28,6 +28,7 @@ class ThumbsSkill(MycroftSkill):
         serD = serial.Serial('/dev/ttyACM3', 9600, timeout=1)
         serD.flush()
         serD.write(b"thumb")
+        time.sleep(1.5)
         self.speak_dialog("i am feeling good")
       
 
